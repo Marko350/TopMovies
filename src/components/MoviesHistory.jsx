@@ -16,7 +16,7 @@ const MoviesHistory = () => {
   const newArray = filter.slice(0, 10);
 
   return (
-    <div className={styles.headContainer}>
+    <div className={styles.headContainer} style={{ paddingBottom: "4rem" }}>
       {/* checking if there is something in newArray, if there is nothing there it will render null */}
       {newArray.length !== 0 ? (
         <>

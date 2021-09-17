@@ -3,7 +3,7 @@
 .title {
   display: block;
   white-space: nowrap;
-  width: 160px;
+  width: 120px;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #dee2e6;
@@ -61,5 +61,11 @@ h1 {
 
   .navbar-toggler {
     margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .title {
+    width: 180px;
   }
 }
