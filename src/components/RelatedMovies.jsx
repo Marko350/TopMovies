@@ -6,7 +6,7 @@ import styles from "./css/Related.module.css";
 //getting id direct with help of {}, without using props.id
 const RelatedMovies = ({ id }) => {
   const history = useHistory();
-  const { data } = useQuery("recomended", () => getRecomendedMovies(id));
+  const { data } = useQuery(["recomended", id], () => getRecomendedMovies(id));
 
   return (
     <div style={{ width: "90%", margin: "0 auto 3rem auto" }}>

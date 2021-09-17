@@ -1,8 +1,6 @@
 import { Button, Container } from "react-bootstrap";
 
 const Pagination = ({ data, isPreviousData, whichPage, setPage }) => {
-  console.log(whichPage);
-  console.log(data);
   return (
     <Container>
       <div className="pagination d-flex justify-content-between align-items-center mt-5 pb-5 text-white">

@@ -63,6 +63,7 @@
 
   .ipad {
     display: block;
+    padding-bottom: 1rem;
   }
 
   .photo {

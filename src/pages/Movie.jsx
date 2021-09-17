@@ -14,7 +14,7 @@ const Movie = () => {
   //using custom hook to store every movie that is clicked by the user
   //key is popularmovie
   const { setValue, value } = useLocalStorage("popularmovie", "");
-
+  console.log(data);
   useEffect(() => {
     if (!data) return null;
     //setting first new object in the array and then the rest of the objects
