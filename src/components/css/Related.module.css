@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container img {
+  width: 160px;
+  height: 230px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.movies {
+  padding: 10px;
+}

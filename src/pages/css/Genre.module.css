@@ -1,0 +1,39 @@
+.container {
+  text-align: center;
+}
+
+.container label {
+  margin: 2rem 1rem 0 0;
+}
+
+.container label {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #dee2e6;
+}
+
+.container select {
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #212529;
+  color: white;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .container select {
+    padding: 7px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container select {
+    font-size: 1.3rem;
+  }
+
+  .container label {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}

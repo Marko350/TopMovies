@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from "react-router";
+import Home from "./pages/Home";
+import Movie from "./pages/Movie";
+import Person from "./pages/Person";
+import TopRated from "./pages/TopRated";
+import Genre from "./pages/Genre";
+import Navigation from "./components/Navigation";
+import Search from "./pages/Search";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ background: "#343a40" }}>
+      <ScrollToTop />
+      <Navigation />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/search">
+          <Search />
+        </Route>
+        <Route path="/movie/:id">
+          <Movie />
+        </Route>
+        <Route path="/person/:id">
+          <Person />
+        </Route>
+        <Route path="/topRated">
+          <TopRated />
+        </Route>
+        <Route path="/genre">
+          <Genre />
+        </Route>
+      </Switch>
     </div>
   );
 }

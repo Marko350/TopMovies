@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container p,
+.container span {
+  color: #dee2e6;
+}
+
+.container h5 {
+  color: #c9cbcc;
+  font-weight: 600;
+}
+
+.imageContainer {
+  width: 100%;
+  position: relative;
+}
+
+.imageContainer img {
+  width: 100%;
+}
+
+.posterImage {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.posterImage img {
+  width: 100px;
+  position: absolute;
+  bottom: 20px;
+  border-radius: 10px;
+}
+
+.container h1 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.posterInfo {
+  display: none;
+}
+
+.mobile {
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .posterImage img {
+    width: 200px;
+    bottom: -15px;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .posterImage {
+    display: flex;
+  }
+
+  .posterInfo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 220px;
+  }
+
+  .firstSpan {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .container section {
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .posterImage {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .posterImage img {
+    width: 300px;
+    position: absolute;
+    bottom: -20px;
+  }
+
+  .container section {
+    max-width: 1200px;
+  }
+  .firstSpan {
+    font-size: 1.8rem;
+  }
+
+  .posterInfo {
+    left: 320px;
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,65 @@
+@import "bootstrap/scss/bootstrap";
+
+.title {
+  display: block;
+  white-space: nowrap;
+  width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #dee2e6;
+  font-weight: 600;
+}
+
+.form-control {
+  margin-left: 13px;
+  width: 95%;
+}
+
+.day,
+.week,
+.week:focus,
+.day:focus {
+  background-color: #212529;
+  outline: none;
+  border: none;
+}
+
+.noResult {
+  text-align: center;
+  margin-top: 5rem;
+  color: #dee2e6;
+  font-weight: 600;
+}
+
+h1 {
+  color: #dee2e6;
+}
+
+.brand {
+  border: 3px solid #dee2e6;
+  padding: 5px !important;
+  border-radius: 100px;
+  font-family: cursive;
+}
+
+.nav {
+  padding: 12px 0 12px 0;
+}
+
+.nav-link {
+  color: #dee2e6 !important;
+}
+
+@media only screen and (max-width: 975px) {
+  .nav-link {
+    margin-top: 1rem;
+  }
+
+  .brand {
+    margin-left: 1.2rem;
+  }
+
+  .navbar-toggler {
+    margin-right: 1rem;
+  }
+}
