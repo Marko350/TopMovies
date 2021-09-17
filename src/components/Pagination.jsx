@@ -1,6 +1,8 @@
 import { Button, Container } from "react-bootstrap";
 
 const Pagination = ({ data, isPreviousData, whichPage, setPage }) => {
+  console.log(whichPage);
+  console.log(data);
   return (
     <Container>
       <div className="pagination d-flex justify-content-between align-items-center mt-5 pb-5 text-white">
@@ -20,14 +22,14 @@ const Pagination = ({ data, isPreviousData, whichPage, setPage }) => {
         <Button
           variant="dark"
           onClick={() => {
-            if (!isPreviousData && data.total_pages) {
+            //isPreviousData is element from useQuery passed with props
+            if (!isPreviousData) {
               //adding 1 to the currentvalue of page
               setPage((currentPage) => currentPage + 1);
             }
           }}
-          //if both options are false button will be disabled
-          //isPreviousData is element from useQuery passed with props
-          disabled={isPreviousData || !data?.total_pages}
+          //if total_pages is the same number withe the current page, button will be disabled
+          disabled={data?.total_pages === whichPage}
         >
           Next Page
         </Button>
