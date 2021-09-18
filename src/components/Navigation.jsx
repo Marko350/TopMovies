@@ -16,7 +16,7 @@ const Navigation = () => {
       <Container style={{ maxWidth: "1200px" }}>
         <Link to="/" className="navbar-brand">
           <span className="brand" role="img">
-            TF
+            TM
           </span>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
