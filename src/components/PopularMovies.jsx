@@ -10,7 +10,7 @@ const PopularMovies = () => {
     <div style={{ maxWidth: "1200px", margin: "2rem auto 0 auto" }}>
       <h1 className="mb-3">Popular movies</h1>
       {/* using Carousel component for rendering data */}
-      <Carousel data={data.results} />
+      <Carousel data={data.results} css="carousel-title" />
     </div>
   );
 };

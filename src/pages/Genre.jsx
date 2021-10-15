@@ -20,7 +20,7 @@ const Genre = () => {
   //getting allMovies and data is renamed with allData because data is declared when getting all genres
   //useQuery is activating on first rendering and every time when page and id is changed
   const { data: allData, isPreviousData } = useQuery(
-    ["moviesID", page, id],
+    ["moviesID", searchParams],
     () => {
       return getAllMovies(page, id);
     },

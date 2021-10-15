@@ -7,6 +7,7 @@ import Genre from "./pages/Genre";
 import Navigation from "./components/Navigation";
 import Search from "./pages/Search";
 import ScrollToTop from "./components/ScrollToTop";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route path="/genre">
           <Genre />
+        </Route>
+        <Route>
+          <PageNotFound />
         </Route>
       </Switch>
     </div>

@@ -15,7 +15,7 @@ const TopRated = () => {
 
   //passing id in array for when id is changing that is triggering the useQuery
   const { data, isPreviousData } = useQuery(
-    ["topRated", page],
+    ["topRated", searchParams],
     () => getAllTopRatedMovies(page),
     {
       keepPreviousData: true,

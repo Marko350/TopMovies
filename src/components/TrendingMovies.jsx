@@ -1,45 +1,69 @@
 import { useQuery } from "react-query";
 import { getTrendingMovies } from "../services/BetsMoviesAPI";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ButtonGroup, ToggleButton } from "react-bootstrap";
 import styles from "./css/MovieHistory.module.css";
 import { useHistory } from "react-router";
+import { useUrlSearchParams } from "use-url-search-params";
 
 const TrendingMovies = () => {
+  const [searchParams, setSearchParams] = useUrlSearchParams(
+    { trending: "day" },
+  );
   const history = useHistory();
   //using hook useState for changing day and week for fetching data
-  const [time, setTime] = useState("day");
+  const [trending, setTrending] = useState(searchParams.trending);
   const [day, setDay] = useState(true);
-  const { data } = useQuery(["trending", time], () => getTrendingMovies(time), {
+  const { data } = useQuery(["trending", searchParams], () => getTrendingMovies(trending), {
     keepPreviousData: true,
   });
 
-  //function for changing class names when clicking on a button
+  useEffect(() => {
+    setSearchParams({ ...searchParams, trending});
+
+    //checking if trending is day after Refresh page so that style of day and week is correct
+    if(trending === "day") {
+      setDay(true);
+    } else {
+      setDay(false)
+    }
+  }, [trending]);
+
+
+  //when clicks on day button
   function toggleDayClass() {
-    setDay(!day);
+    if(day) {
+      return;
+    } else {
+      setTrending("day");
+      setDay(!day);
+    }
+  }
+
+  //when clicks on week button
+  function toggleWeekClass() {
+    if(day) {
+      setTrending("week");
+      setDay(!day);
+      } else {
+        return;
+      }
   }
 
   return (
     <div style={{ maxWidth: "1200px", margin: "0 auto 4rem auto" }}>
       <div className="d-flex align-items-center mb-3">
         <h1>Trending movies</h1>
-
         <ButtonGroup style={{ marginLeft: "30px" }}>
           <ToggleButton
-            onClick={() => {
-              toggleDayClass();
-              setTime("day");
-            }}
+            onClick={toggleDayClass}
             className={day ? "day" : null}
             variant="secondary"
           >
             Day
           </ToggleButton>
           <ToggleButton
-            onClick={() => {
-              toggleDayClass();
-              setTime("week");
-            }}
+            onClick={toggleWeekClass}
             className={!day ? "week" : null}
             variant="secondary"
           >

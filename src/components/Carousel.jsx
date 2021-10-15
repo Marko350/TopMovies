@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 //getting data as prop from parent element
-const Carousel = ({ data }) => {
+const Carousel = ({ data, css }) => {
   //settings for react-slick-carousel
   var settings = {
     draggable: true,
@@ -70,7 +70,7 @@ const Carousel = ({ data }) => {
                   src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                   alt="Cover"
                 />
-                <p className="title" style={{ marginLeft: "5px" }}>
+                <p className={css} style={{ marginLeft: "5px" }}>
                   {i + 1}. {movie.title}
                 </p>
               </Link>
