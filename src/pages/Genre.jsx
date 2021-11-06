@@ -69,7 +69,7 @@ const Genre = () => {
         <AllMovies
           id={id}
           data={allData}
-          page={page}
+          page={searchParams.page}
           setPage={setPage}
           isPreviousData={isPreviousData}
         />

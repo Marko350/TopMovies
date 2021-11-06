@@ -61,7 +61,7 @@ const TopRated = () => {
         </Row>
       </Container>
       <Pagination
-        whichPage={page}
+        whichPage={searchParams.page}
         setPage={setPage}
         data={data}
         isPreviousData={isPreviousData}

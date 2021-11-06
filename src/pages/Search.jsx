@@ -86,7 +86,7 @@ const Search = () => {
         <div>
           <AllMovies
             data={data}
-            page={page}
+            page={searchParams.page}
             setPage={setPage}
             isPreviousData={isPreviousData}
           />
